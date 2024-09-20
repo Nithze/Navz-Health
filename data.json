@@ -1,0 +1,74 @@
+[
+  {
+    "name": "aldi",
+    "nik": "123",
+    "notes": [
+      {
+        "date": "2024-07-27",
+        "time": "11:01 AM",
+        "temperature": "30",
+        "location": "bandung"
+      },
+      {
+        "date": "2024-07-26",
+        "time": "1:01 PM",
+        "temperature": "20",
+        "location": "aad"
+      },
+      {
+        "date": "2024-07-26",
+        "time": "2:02 AM",
+        "temperature": "30",
+        "location": "thepark cawangan indahh"
+      },
+      {
+        "date": "2024-07-26",
+        "time": "8:20 PM",
+        "temperature": "30",
+        "location": "bogor kahuripan jaya kusuma"
+      },
+      {
+        "date": "2024-07-27",
+        "time": "2:02 AM",
+        "temperature": "38",
+        "location": "magelang toko batik nasional indonesia "
+      },
+      {
+        "date": "2024-07-25",
+        "time": "12:20 AM",
+        "temperature": "39",
+        "location": "magelang "
+      }
+    ]
+  },
+  {
+    "name": "aldi",
+    "nik": "1234",
+    "notes": [
+      {
+        "date": "2024-08-14",
+        "time": "12:12 PM",
+        "temperature": "32",
+        "location": "The park uhuy "
+      },
+      {
+        "date": "2024-08-17",
+        "time": "8:20 PM",
+        "temperature": "34",
+        "location": "Cogreg city"
+      },
+      {
+        "date": "2024-08-09",
+        "time": "10:22 PM",
+        "temperature": "40",
+        "location": "ngalengan sintung"
+      },
+      {
+        "date": "2024-08-20",
+        "time": "10:22 PM",
+        "temperature": "36",
+        "location": "pondok labu"
+      }
+    ]
+  }
+]

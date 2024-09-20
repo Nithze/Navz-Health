@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        * {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            font-size: 20px;
+        }
+
+        .nav {
+            width: 95%;
+            /* width: 95%; */
+            height: 80px;
+            display: flex;
+            align-items: center;
+            /* padding: 0 44px; */
+            color: #fff;
+        }
+
+        .nav .logo {
+            font-size: 20px;
+            font-weight: bold;
+            margin-right: auto;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 16px;
+        }
+
+        .nav a:hover {
+            text-decoration: underline;
+        }
+
+
+        .main {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            background-image: url('/MacBook Pro 14_ - 3background.jpg');
+            background-size: cover;
+        }
+
+        .toolbar {
+            font-size: 20px;
+            color: #fff;
+            width: 95%;
+            height: 60px;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            background-color: #000000;
+            margin: 12px 0px 12px 0px;
+            padding: 12px 20px;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        .left {
+            display: flex;
+            gap: 40px;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .right {
+            display: flex;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .filter-btn {
+            width: 150px;
+            font-size: 20px;
+            padding: 5px 0px 5px 0px;
+            border-radius: 4px;
+            background-color: #6404FF;
+        }
+
+        .add-btn {
+            padding: 5px 30px 5px 30px;
+            background-color: #6404FF;
+            border-radius: 4px;
+            font-size: 20px;
+            color: #fff;
+            border: none;
+        }
+
+        .filter-btn {
+            padding: 5px 30px 5px 30px;
+            background-color: #6404FF;
+            border-radius: 4px;
+            font-size: 20px;
+            color: #fff;
+            border: none;
+        }
+
+        #notes {
+            width: 95%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .note-card {
+            padding: 12px 20px;
+            box-sizing: border-box;
+            border-radius: 4px;
+            /* padding: 10px; */
+            margin-bottom: 10px;
+            background-color: #141319;
+            color: #fff;
+            display: flex;
+            height: 80px;
+            align-items: center;
+            gap: 100px;
+            /* flex-direction: column; */
+        }
+
+        .note-item {
+            width: 25%;
+        }
+
+        .note-item.date {
+            width: 20%;
+        }
+
+        .note-item.time {
+            width: 20%;
+        }
+
+        .note-item.location {
+            width: 100%;
+        }
+
+        .note-item.temperature {
+            width: 20%;
+        }
+
+        .note-card span {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="nav">
+            <div class="logo">Navz</div>
+            <div id="user-info"></div> <!-- Pastikan elemen ini ada -->
+        </div>
+        <div class="toolbar">
+            <div class="left">
+                <div class="text">Filter</div>
+                <div class="filter-date"><input type="date"></div>
+                <button class="filter-btn">Filter</button>
+            </div>
+            <div class="right">
+                <!-- <button class="add-btn">+</button> -->
+                <button class="toggle-button add-btn" onclick="toggleForm()">Tambah Catatan</button>
+            </div>
+        </div>
+        <div id="notes"></div>
+        <div class="container">
+            <div class="float">
+                <!-- <button class="toggle-button" onclick="toggleForm()">Tambah Catatan</button> -->
+                <div class="form-float hidden" id="noteFormContainer">
+                    <!-- <form id="noteForm"> -->
+                    <!--     <input type="date" id="date" required> -->
+                    <!--     <input type="time" id="time" required> -->
+                    <!--     <select id="ampm" required> -->
+                    <!--         <option value="AM">AM</option> -->
+                    <!--         <option value="PM">PM</option> -->
+                    <!--     </select> -->
+                    <!--     <input type="number" id="temperature" placeholder="Suhu Badan (°C)" required> -->
+                    <!--     <textarea id="location" placeholder="Lokasi" rows="3" required></textarea> -->
+                    <!--     <button type="button" onclick="addNote()">Tambah Catatan</button> -->
+                    <!-- </form> -->
+                    <form id="noteForm">
+                        <input type="date" id="date" required>
+                        <input type="time" id="time" required>
+                        <input type="number" id="temperature" placeholder="Suhu Badan (°C)" required>
+                        <textarea id="location" placeholder="Lokasi" rows="3" required></textarea>
+                        <button type="button" onclick="addNote()">Tambah Catatan</button>
+                    </form>
+
+
+                    <style>
+                        form input {
+                            background-color: #141319;
+                            color: #fff;
+                            border: none;
+                        }
+
+                        .float {
+                            width: 300px;
+                            margin: 20px auto;
+                            background-color: #141319;
+                        }
+
+
+                        .form-float {
+                            position: fixed;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            width: 680px;
+                            height: 480px;
+                            padding: 20px;
+                            border: 1px solid #ddd;
+                            border-radius: 5px;
+                            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+                            z-index: 1000;
+                            box-sizing: border-box;
+                            background-color: #000;
+                            /* Ensure padding is included in width */
+                        }
+
+                        .form-float.hidden {
+                            display: none;
+                        }
+
+                        .container {
+                            width: 100%;
+                            height: 100vh;
+                        }
+                    </style>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
